@@ -1,0 +1,232 @@
+/* Cleaned up unused CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #faf8ef;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+h1 {
+    color: #776e65;
+    font-size: 80px;
+    margin: 0;
+}
+
+.score-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #bbada0;
+    color: white;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.score-label {
+    font-size: 16px;
+}
+
+#score {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.game-container {
+    background-color: #bbada0;
+    border-radius: 6px;
+    width: calc(100% - 30px);
+    aspect-ratio: 1 / 1;
+    padding: 15px;
+}
+
+.bird-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.tile {
+    background-color: #cdc1b4;
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    color: #776e65;
+    transition: all 0.2s ease-in-out;
+    user-select: none; /* Prevent text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.tile-2 { background-color: #eee4da; }
+.tile-4 { background-color: #ede0c8; }
+.tile-8 { background-color: #f2b179; color: white; }
+.tile-16 { background-color: #f59563; color: white; }
+.tile-32 { background-color: #f67c5f; color: white; }
+.tile-64 { background-color: #f65e3b; color: white; }
+.tile-128 { 
+    background-color: #edcf72; 
+    color: white;
+    font-size: 35px;
+}
+.tile-256 { 
+    background-color: #edcc61; 
+    color: white;
+    font-size: 35px;
+}
+.tile-512 { 
+    background-color: #edc850; 
+    color: white;
+    font-size: 35px;
+}
+.tile-1024 { 
+    background-color: #edc53f; 
+    color: white;
+    font-size: 25px;
+}
+.tile-2048 { 
+    background-color: #edc22e; 
+    color: white;
+    font-size: 25px;
+}
+
+.instructions {
+    margin-top: 20px;
+    color: #776e65;
+}
+
+.new-tile {
+    animation: appear 0.2s ease-in-out;
+}
+
+@keyframes appear {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.merged-tile {
+    animation: pop 0.2s ease-in-out;
+}
+
+@keyframes pop {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.control-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.control-button {
+    background-color: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+    background-color: #776e65;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6); /* Darker background for contrast */
+}
+
+.modal.show {
+    display: flex; /* Show and center modal when active */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 0;
+    padding: 30px;
+    border: none;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.modal-content button {
+    background-color: #f67c5f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content button:hover {
+    background-color: #f65e3b;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

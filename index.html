@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>2048</h1>
+            <div class="score-container">
+                <div class="score-label">Score</div>
+                <div id="score">0</div>
+            </div>
+        </div>
+        <div class="game-container">
+            <div id="grid" class="bird-layout"></div>
+        </div>
+        <div class="control-panel">
+            <button id="undo-button" class="control-button">Step Back</button>
+            <button id="reset-button-main" class="control-button">Reset Game</button>
+            <button id="ai-control-button" class="control-button">AI Control</button>
+            <button id="pause-ai-button" class="control-button">Pause AI</button>
+        </div>
+        <div class="instructions">
+            Use arrow keys or swipe to play. Combine tiles to reach 2048!
+        </div>
+        <div id="game-over-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close-button">&times;</span>
+                <p>Game Over! Your score: <span id="final-score"></span></p>
+                <button id="reset-button">Reset Game</button>
+            </div>
+        </div>
+        <div id="success-modal" class="modal">
+            <div class="modal-content">
+                <span id="close-success-modal" class="close-button">&times;</span>
+                <p>Congratulations! You've reached 2048!</p>
+                <button id="reset-success-button">Reset Game</button>
+            </div>
+        </div>
+    </div>
+    <script src="mcm.js"></script>
+    <script src="gameLogic.js"></script>
+    <script src="uiHandler.js"></script>
+    <script src="utils.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
