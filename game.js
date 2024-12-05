@@ -105,11 +105,13 @@ class Game2048 {
         let touchStartY = 0;
 
         this.ui.boardElement.addEventListener('touchstart', (e) => {
+            e.preventDefault();
             touchStartX = e.touches[0].clientX;
             touchStartY = e.touches[0].clientY;
         });
 
         this.ui.boardElement.addEventListener('touchend', (e) => {
+            e.preventDefault();
             const touchEndX = e.changedTouches[0].clientX;
             const touchEndY = e.changedTouches[0].clientY;
 
